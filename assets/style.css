@@ -1,0 +1,84 @@
+html {
+  min-height: 100%;
+  position: relative;
+}
+
+body {
+  height: 100%;
+  margin-bottom: 6.5em;
+  background: #F2FFDF;
+}
+
+.jumbotron {
+  background: #1E757B;
+}
+
+.jumbotron h1, .jumbotron p {
+  margin: 0 5%;
+  color: #B1F1B2;
+}
+
+.code {
+	color: red;
+	font-family: 'Source Code Pro', monospace;
+	background-color: #eee;
+	border-radius: .25em;
+	padding: 5px; 
+}
+
+.verify {
+	display: none;
+	text-align: center;
+}
+
+.preloader {
+  display: none;
+  position: fixed;
+  height: 3em;
+  width: 3em;
+  top: calc(50% - 1.5em);
+  left: calc(50% - 1.5em);
+  z-index: 2;
+}
+
+.panel-body {
+  color: #424D69;
+}
+
+.panel.basic-sort, .panel.bubble-sort, .panel.optimized-sort {
+	display: none;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  margin-top: 0.5em;
+  padding-top: 0.5em;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 6em;
+  color: #B1F1B2;
+  background-color: #1E757B;
+  border-top-style: solid;
+  border-top-color: #B1F1B2;
+  border-top-width: .325em;
+}
+
+.footer a:link {
+    text-decoration: none;
+    color: white;
+    font-size: 2em;
+}
+
+.footer a:visited {
+    text-decoration: none;
+    color: #B1F1B2;
+}
+
+.footer a:hover {
+  border-radius: 5px;
+  background-color: #B1F1B2;
+  color: #1E757B;
+  padding-left: 0.125em;
+  padding-right: 0.125em;
+}

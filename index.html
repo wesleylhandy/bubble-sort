@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+ 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Bubble Sort Optimization</title>
+
+	<!-- Latest compiled and minified jQuery -->
+	<script src="https://code.jquery.com/jquery.js"></script>
+
+		<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<!--Font Awesome-->
+  <script src="https://use.fontawesome.com/5f1f3cb4d3.js"></script>
+	
+	<!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:300" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" href="assets/style.css">
+  <style type="text/css">
+  	
+  	
+
+  </style>
+</head>
+<body>
+
+	<div class='jumbotron'>
+		<h1>Bubble Sort and it's Optimization</h1>
+		<p>Sorting 10,000 numbers in an array...</p>
+		<p>...or, Why you shouldn't use Bubble Sort.</p>
+	</div>
+
+	<div class = 'container'>
+		<div class = 'row'>
+			<div class='col-xs-12'>
+				<div class = 'panel panel-info'>
+					<div class = 'panel-heading'>
+						<h1 class = 'panel-title'>Sort Basics</h1>
+					</div>
+					<div class = 'panel-body'>
+						<h3>What are we going to do?</h3>
+						<p>In our data are stored an array of 10,000 unique integers between 1 and 10,000 (inclusive) in random order. Just open the console in dev-tools if you want to view the pre-sorted array.</p>
+						<ol>
+							<li><p>We will sort our array using the built-in <span class='code'>Array.prototype.sort()</span> function and time how long it takes.</p></li>
+							<li><p>We will sort our array using the standard bubble-sort algorithm. This algorithm 'bubbles' the highest number to the end of the array by making a series of comparisons between two consecutive values in the array as it iterates through the array. So it will iterate through the entire array and on each iteration will also iterate through the entire array. This is n^2 time.</p></li>
+							<li><p>We will sort our array again using the bubble-sort with some special modifications.</p>
+								<ul>
+									<li><p>We can assume on each full iteration through the array that the last item will be in proper order. So we can limit our inner-iterations <span class='code'>array.length</span> minus the number of full iterations completed.</p></li>
+									<li><p>Also, we can stop the full iterations once we have completed an inner iterations without making a swap.</p></li>
+									<li><p>By making these two changes, compared to the bubble sort, we reduce sort time dramatically and reduce total iterations by just over 50%. Nevertheless, Bubble Sort remains a very inefficient sort algorithm.</p></li>
+									<li><p>Inspired by: <a href='https://dev.to/vaidehijoshi/bubbling-up-with-bubble-sorts' target="_blank">https://dev.to/vaidehijoshi/bubbling-up-with-bubble-sorts</a></p></li>
+								</ul>
+						</ol>
+						<button class='btn btn-primary btn-lg btn-block'>Click Here for Results</button>
+						<p class='verify'>See Console to Verify Sort</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class='preloader'>
+			<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+			<span class="sr-only">Loading...</span>
+		</div>
+
+		<div class = 'row'>
+			<div class= 'col-xs-12 col-sm-4'>
+				<div class = 'panel panel-success basic-sort'>
+					<div class ='panel-heading'>
+						<h1 class = 'panel-title'>JS Sort</h1>
+					</div>
+					<div class = 'panel-body'>
+						<div class = 'elapsed-time basic-sort'></div>
+						<div class = 'iterations basic-sort'></div>
+					</div>
+				</div>
+			</div>
+		
+			<div class= 'col-xs-12 col-sm-4'>
+				<div class = 'panel panel-danger bubble-sort'>
+					<div class ='panel-heading'>
+						<h1 class = 'panel-title'>Bubble Sort</h1>
+					</div>
+					<div class = 'panel-body'>
+						<div class = 'elapsed-time bubble-sort'></div>
+						<div class = 'iterations bubble-sort'></div>
+					</div>
+				</div>
+			</div>
+
+			<div class= 'col-xs-12 col-sm-4'>
+				<div class = 'panel panel-warning optimized-sort'>
+					<div class ='panel-heading'>
+						<h1 class = 'panel-title'>Optimized Bubble</h1>
+					</div>
+					<div class = 'panel-body'>
+						<div class = 'elapsed-time optimized-sort'></div>
+						<div class = 'iterations optimized-sort'></div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+ 	<footer class = "footer text-center">
+    <span>Copyright <i class="fa fa-copyright" aria-hidden="true"></i><span id="year"></span>&nbsp;Wesley L. Handy</span>
+    <div id = "gh-link"><a href="https://github.com/wesleylhandy/bubble-sort" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></div>
+  </footer> 
+
+	<!-- custom js -->
+
+	<script type="text/javascript">
+		$("#year").text(new Date().getFullYear());
+	</script>
+
+	<script type="text/javascript" src='assets/data.js'></script>
+  <script type="text/javascript" src='assets/sort.js'></script>
+
+</body>
+</html>
